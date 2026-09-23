@@ -112,7 +112,7 @@ The current NEAT configuration uses:
 
 ```text
 Population Size:       50
-Generations:           100
+Maximum generations:  100
 
 Inputs:                4
 Outputs:               1
@@ -141,10 +141,10 @@ Example:
 ```text
 networks/
 ├── generation_001.svg
-├── generation_010.svg
-├── generation_025.svg
-├── generation_050.svg
-└── generation_100.svg
+├── generation_002.svg
+├── generation_003.svg
+├── generation_004.svg
+└── generation_005.svg
 ```
 
 These diagrams allow the evolution of the neural network topology and connection weights to be examined across generations.
@@ -211,7 +211,7 @@ Training checkpoints are automatically created during evolution.
 
 The current configuration saves a checkpoint every **10 generations**.
 
-This makes it possible to preserve the evolutionary state during longer training runs.
+Training checkpoints are automatically saved every 10 generations. These checkpoints preserve the NEAT population state and can be used for future training-resume functionality.
 
 ---
 
@@ -221,20 +221,22 @@ This makes it possible to preserve the evolutionary state during longer training
 flappy-bird-neat-ai/
 │
 ├── imgs/
-│   ├── bg.png
-│   ├── ground.png
-│   ├── pipe.png
-│   ├── bird1.png
-│   ├── bird2.png
-│   └── bird3.png
 │
 ├── networks/
 │   ├── README.md
-│   └── generation_*.svg
+│   ├── generation_001.svg
+│   ├── generation_002.svg
+│   ├── generation_003.svg
+│   ├── generation_004.svg
+│   ├── generation_005.svg
+│   └── generation_006.svg
 │
 ├── flappy_bird_(AI version).py
 ├── visualize.py
 ├── config-feedforward.txt
+├── requirements.txt
+├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
@@ -268,7 +270,7 @@ cd flappy-bird-neat-ai
 Install the required Python packages:
 
 ```bash
-pip install pygame neat-python numpy matplotlib graphviz
+pip install -r requirements.txt
 ```
 
 Make sure **Graphviz** is installed and available in your system PATH if you want to generate neural-network diagrams.
