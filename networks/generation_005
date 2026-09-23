@@ -1,0 +1,9 @@
+digraph {
+	node [fontsize=9 height=0.2 shape=circle width=0.2]
+	"Bird Y" [fillcolor=lightgray shape=box style=filled]
+	Velocity [fillcolor=lightgray shape=box style=filled]
+	"Pipe Distance" [fillcolor=lightgray shape=box style=filled]
+	"Gap Distance" [fillcolor=lightgray shape=box style=filled]
+	FLAP [fillcolor=lightblue style=filled]
+	"Bird Y" -> FLAP [color=green penwidth=0.48439822166772495 style=solid]
+}
